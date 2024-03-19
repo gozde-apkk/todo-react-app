@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Todo from './Todo';
 
 const TodoForm = (props) => {
 
@@ -34,10 +33,8 @@ const TodoForm = (props) => {
         <button className='todo-button'>Update </button></>) : ( <>  <input className='todo-input' onChange={handleChange} ref={inputRef} type='text' id='text' placeholder='Add a todo' value={inputValue} name='input' />
         <button className='todo-button'>Add Todo</button></>)}
       </form>
-      {/* {todos && todos.map(( todo, index) => (
-        <div key={todo.id}>{todo.text} </div>
-      ))} */}
- 
+
+
     </div>
   )
 }
