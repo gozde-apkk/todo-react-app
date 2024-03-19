@@ -11,7 +11,7 @@ const TodoList = () => {
   const addTodo = todo => {
    const newTodo = [todo, ...todos];
    setTodos(newTodo);
-   console.log(todos);
+   console.log(...todos);
   }
 
   //todo completing function
