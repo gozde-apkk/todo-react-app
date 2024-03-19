@@ -37,6 +37,8 @@ const TodoList = () => {
   const updatedTodos = (todoId, newInput) => {
     setTodos(prev => prev.map(item => (item.id === todoId ? newInput : item)));
   }
+
+  
   return (
     <div>
       <h1>What's the Plan for today?</h1>

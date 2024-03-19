@@ -4,8 +4,7 @@ import Todo from './Todo';
 const TodoForm = (props) => {
 
     //state
-    const [todos, setTodos] = useState([]);
-    const[inputValue, setInputValue] = useState("");
+    const[inputValue, setInputValue] = useState(props.edit ? props.edit.value : '');
 
     const inputRef = useRef(null);
 
@@ -27,22 +26,13 @@ const TodoForm = (props) => {
         })
         setInputValue("");
     }
-    
-    //   const addTodo = (inputValue) => {
-    //     const newTodo = {
-    //         id : Date.now(),
-    //        text :  inputValue
-    //     }
-    //     setTodos([...todos, newTodo]);
-    //     console.log(todos);
-    //     setInputValue("");
-    //   }
 
   return (
     <div>
-      <form onSubmit={handleSubmit}  >
-        <input onChange={handleChange} type='text' id='text' placeholder='Add a todo' value={inputValue} name='input' />
-        <button>Add Todo</button>
+      <form className='todo-form' onSubmit={handleSubmit}  >
+     {props.edit ? (<> <input className='todo-input' onChange={handleChange} ref={inputRef} type='text' id='text' placeholder='Update todo' value={inputValue} name='input' />
+        <button className='todo-button'>Update </button></>) : ( <>  <input className='todo-input' onChange={handleChange} ref={inputRef} type='text' id='text' placeholder='Add a todo' value={inputValue} name='input' />
+        <button className='todo-button'>Add Todo</button></>)}
       </form>
       {/* {todos && todos.map(( todo, index) => (
         <div key={todo.id}>{todo.text} </div>
