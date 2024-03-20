@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
+import Box from '@mui/material/Box';
 
 const TodoList = () => {
 
@@ -47,11 +48,11 @@ const TodoList = () => {
 
   
   return (
-    <div>
+    <Box>
       <h1>What's the Plan for today?</h1>
       <TodoForm onSubmit={addTodo}/>
       <Todo todo={todos} completeTodo={completeTodo} removeTodo={removeTodo} updatedTodos={updatedTodos}/>
-    </div>
+    </Box>
   );
 };
 

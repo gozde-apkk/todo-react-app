@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
 import TodoForm from "./TodoForm";
+import { Grid } from "@mui/material";
 
 const Todo = ({ todo, completeTodo, removeTodo, updatedTodos }) => {
  
@@ -24,7 +25,7 @@ const Todo = ({ todo, completeTodo, removeTodo, updatedTodos }) => {
   }
 
   return todo.map((todo, index) => (
-    <div
+    <Grid item xs={8}
     style={{margin:"31px"}}
       className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
       key={index}
@@ -42,7 +43,7 @@ const Todo = ({ todo, completeTodo, removeTodo, updatedTodos }) => {
           className='edit-icon'
         />
       </div>
-    </div>
+    </Grid>
   ));
 };
 

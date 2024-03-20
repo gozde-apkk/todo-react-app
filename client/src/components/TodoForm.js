@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import { Button } from '@mui/material';
 function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : '');
   console.log("Todoform,", props);
@@ -25,24 +27,28 @@ function TodoForm(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='todo-form'>
+    <Box component = "form"  sx={{display:"flex", justifyContent:"center",gap:"5px"}}
+    noValidate
+      autoComplete="off" onSubmit={handleSubmit} className='todo-form'>
       {props.edit ? (
         <>
-          <input
+          <TextField
+             required
             placeholder='Update your item'
             value={input}
             onChange={handleChange}
             name='text'
             ref={inputRef}
+            variant="outlined"
             className='todo-input edit'
           />
-          <button onClick={handleSubmit} className='todo-button edit'>
+          <Button onClick={handleSubmit} className='todo-button edit'>
             Update
-          </button>
+          </Button>
         </>
       ) : (
         <>
-          <input
+          <TextField
             placeholder='Add a todo'
             value={input}
             onChange={handleChange}
@@ -50,12 +56,12 @@ function TodoForm(props) {
             className='todo-input'
             ref={inputRef}
           />
-          <button onClick={handleSubmit} className='todo-button'>
+          <Button onClick={handleSubmit} className='todo-button'>
             Add todo
-          </button>
+          </Button>
         </>
       )}
-    </form>
+    </Box>
   );
 }
 
