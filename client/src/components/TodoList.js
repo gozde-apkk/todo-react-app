@@ -5,13 +5,20 @@ import Todo from "./Todo";
 const TodoList = () => {
 
    //todo state
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([]); //10 elemanlı
 
   //todo adding function
   const addTodo = todo => {
-   const newTodo = [todo, ...todos];
-   setTodos(newTodo);
-   console.log(...todos);
+
+   const newTodo = [todo, ...todos]; // newTodo 11 eleman 
+
+    // virtual dom'a girdik 
+   setTodos(todos); // virtual ve real dom da 10 eleman
+   console.log(setTodos(todos)); // virtual ve real dom da 10 eleman 
+
+   setTodos(newTodo); // virtual dom da 11 ve real dom da 10 eleman
+   console.log(todos); // virtual dom da 11 ve real dom da 10 eleman
+ 
   }
 
   //todo completing function
