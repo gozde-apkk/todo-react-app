@@ -65,7 +65,7 @@ function TodoForm(props) {
       {props.edit ? (
         <>
           <TextField
-             required
+             required= {true}
             placeholder='Update your item'
             value={input}
             onChange={handleChange}

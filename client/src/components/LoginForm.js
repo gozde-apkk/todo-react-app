@@ -48,8 +48,8 @@ const LoginForm = () => {
             margin="normal"
             required
             fullWidth
-            id="email"
-            label="email"
+            id="username"
+            label="username"
             autoFocus
             onChange={handleChange}
     />
